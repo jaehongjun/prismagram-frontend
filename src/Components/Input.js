@@ -1,6 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
 const Container = styled.input`
   border: 0;
   border: ${props => props.theme.boxBorder};
@@ -9,7 +10,6 @@ const Container = styled.input`
   height: 35px;
   font-size: 12px;
   padding: 0px 15px;
-  width: 100%;
 `;
 
 const Input = ({
@@ -17,9 +17,11 @@ const Input = ({
   required = true,
   value,
   onChange,
-  type = "text"
+  type = "text",
+  className
 }) => (
   <Container
+    className={className}
     placeholder={placeholder}
     required={required}
     value={value}
